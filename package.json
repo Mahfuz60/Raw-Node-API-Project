@@ -3,7 +3,8 @@
     "package.json": "^2.0.1"
   },
   "scripts": {
-    "start": "nodemon index"
+    "start": "NODE_ENV=staging nodemon index",
+    "production": "NODE_ENV=production nodemon index"
   },
   "devDependencies": {
     "eslint": "^7.2.0",

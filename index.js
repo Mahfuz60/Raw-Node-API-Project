@@ -8,19 +8,20 @@ Author:Mahfuz Alam
 const http = require('http');
 
 const { handleReqRes } = require('./helpers/handleReqRes');
+const environment = require('./helpers/environment');
+const data = require('./lib/data');
 
 // app object= module scaffolding
 const app = {};
-// configuration
-app.config = {
-    port: 3000,
-};
-
+// testing the file system
+data.create('test', 'newFile', { name: 'Bangladesh', language: 'Bengali' }, (err) => {
+    console.log(err);
+});
 // create server
 app.createServer = () => {
     const server = http.createServer(app.handleReqRes);
-    server.listen(app.config.port, () => {
-        console.log(`listening to the port ${app.config.port}`);
+    server.listen(environment.port, () => {
+        console.log(`listening to the port ${environment.port}`);
     });
 };
 
