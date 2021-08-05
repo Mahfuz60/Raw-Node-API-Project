@@ -27,7 +27,7 @@ data.create(
     },
     (err) => {
         console.log('Error was', err);
-    },
+    }
 );
 
 // testing the read file system
