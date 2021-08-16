@@ -10,6 +10,12 @@ const http = require('http');
 const { handleReqRes } = require('./helpers/handleReqRes');
 const environment = require('./helpers/environment');
 const data = require('./lib/data');
+const { sendTwilioSms } = require('./helpers/notification');
+
+// @TODO testing way then remove this
+sendTwilioSms('01798992555', 'hello world', (err) => {
+    console.log(err);
+});
 
 // app object= module scaffolding
 const app = {};
